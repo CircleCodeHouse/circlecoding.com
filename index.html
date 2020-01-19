@@ -41,19 +41,6 @@ learn_items:
     scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
     tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
     Donec lacinia congue felis in faucibus.
-team:
-- photo: "/assets/uploads/150.jpg"
-  name: Jane Smith
-  role: Lead
-- photo: "/assets/uploads/150.jpg"
-  name: Jane Smith
-  role: Lead
-- photo: "/assets/uploads/150.jpg"
-  name: Jane Smith
-  role: Lead
-- photo: "/assets/uploads/150.jpg"
-  name: Jane Smith
-  role: Lead
 ---
 
 {% for _page in site.pages %}
@@ -155,7 +142,7 @@ team:
       <hr style="width: 200px; border-width: 3px" class="mx-0" />
     </div>
     <div class="row d-flex justify-content-center">
-      {% for mate in page.team %}
+      {% for mate in settings.team %}
         <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="mb-3 position-relative">
             <img src="{{ mate.photo }}" class="rounded-circle w-100 shadow-lg mb-3">
