@@ -4,6 +4,56 @@ permalink: '/'
 title: Homepage
 head_title: ''
 description: ''
+learn_items:
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+- icon: far fa-lightbulb fa-2x
+  title: Media heading
+  description: Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+    scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at,
+    tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+    Donec lacinia congue felis in faucibus.
+team:
+- photo: "/assets/uploads/150.jpg"
+  name: Jane Smith
+  role: Lead
+- photo: "/assets/uploads/150.jpg"
+  name: Jane Smith
+  role: Lead
+- photo: "/assets/uploads/150.jpg"
+  name: Jane Smith
+  role: Lead
+- photo: "/assets/uploads/150.jpg"
+  name: Jane Smith
+  role: Lead
 ---
 
 {% for _page in site.pages %}
@@ -11,3 +61,168 @@ description: ''
     {% assign settings = _page %}
   {% endif %}
 {% endfor %}
+
+<section class="py-5 bg-img-1">
+  <div class="container text-center text-white my-5">
+    <div class="my-5 py-5">
+      <h1 class="font-family-alt font-weight-bold">Change Your Life With a New Career</h1>
+      <h2 class="font-family-alt font-italic">
+        Part-time coding classes taught by local full-time developers
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <h3><strong>What</strong> will you learn?</h3>
+    <h4>Learn to study, live and work in a competitive business area.</h4>
+    <div class="d-flex">
+      <hr style="width: 200px; border-width: 3px" class="mx-0" />
+    </div>
+    <div class="row">
+      {% for item in page.learn_items %}
+        <div class="col-md-6">
+          {% if forloop.last %}
+            <div class="card text-white bg-gradient-dark-gray mb-3 border-0 shadow-lg">
+              <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <h6 class="card-text">{{ item.description }}</h6>
+              </div>
+            </div>
+          {% else %}
+            <div class="media mb-3">
+              {% if item.icon != nil %}
+                <i class="{{ item.icon }} mr-3"></i>
+              {% endif %}
+              <div class="media-body">
+                <h5 class="mt-0">{{ item.title }}</h5>
+                <h6>{{ item.description }}</h6>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-5">
+  <div class="container d-flex justify-content-center my-5">
+    <a href="#" class="btn btn-lg btn-brand-primary-dark">GET STARTED</a>
+    <a href="#" class="btn btn-lg btn-outline-dark mx-2">MORE INFO</a>
+    <a href="#" class="btn btn-lg btn-brand-secondary-dark">CONTACT US</a>
+  </div>
+</section>
+
+<section class="py-5 container">
+  <div class="row">
+    <div class="col-md-6 position-relative">
+      <div style="height: 300px;">
+        <img src="/assets/uploads/4SGM0572.jpg" class="rounded-lg shadow-lg position-absolute" style="height: 200px; width: 300px; right: 0"></img>
+        <div class="card text-white bg-gradient-dark-gray border-0 shadow-lg position-absolute z-10" style="width: 200px; top: 100px">
+          <div class="card-body">
+            <h6 class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit.
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3><strong>Launch</strong> A Unique Project</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi
+        corporis cumque suscipit magnam cum repellat quae, minima, porro similique
+      </p>
+      <ul class="fa-ul">
+        <li><span class="fa-li"><i class="fas fa-check-square"></i></span>List icons can</li>
+        <li><span class="fa-li"><i class="fas fa-check-square"></i></span>be used to</li>
+        <li><span class="fa-li"><i class="fas fa-check-square"></i></span>List icons can</li>
+        <li><span class="fa-li"><i class="fas fa-check-square"></i></span>be used to</li>
+      </ul>
+      <a href="#">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3>Our Team</h3>
+    <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h4>
+    <div class="d-flex">
+      <hr style="width: 200px; border-width: 3px" class="mx-0" />
+    </div>
+    <div class="row d-flex justify-content-center">
+      {% for mate in page.team %}
+        <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+          <div class="mb-3 position-relative">
+            <img src="{{ mate.photo }}" class="rounded-circle w-100 shadow-lg mb-3">
+            <div class="d-flex justify-content-center position-absolute w-100 mb-3" style="bottom: -10px">
+              <div class="rounded-lg p-1 bg-white text-center px-1 shadow-sm w-100">
+                <strong>{{ mate.name }}</strong>
+                <p class="mb-0 h6">{{ mate.role }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="bg-gradient-dark-gray py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h3 class="text-white">Sign Up for classes!</h3>
+        <p class="text-white">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Necessitatibus a vel repellat exercitationem ipsum minus reprehenderit
+          obcaecati sunt aperiam quibusdam. Fuga ad nisi minus dolorum consequuntur
+          numquam est, sequi enim?
+        </p>
+        <div class="d-flex mb-4">
+          <a href="#" class="btn btn-lg btn-brand-primary-dark mr-3">
+            GET STARTED
+          </a>
+          <a href="#" class="btn btn-lg btn-light">
+            MORE INFO
+          </a>
+        </div>
+      </div>
+      <div class="col-md-5 text-dark">
+        <div class="shadow-lg p-4 bg-white rounded-lg">
+          <h4 class="text-center">Contact Us</h4>
+          <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          <form>
+            <div class="form-group">
+              <label for="firstname">First Name</label>
+              <input type="text" class="form-control" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" class="form-control" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="3" name="message"></textarea>
+            </div>
+            <button class="btn btn-lg btn-brand-secondary-dark" type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

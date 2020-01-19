@@ -36,7 +36,7 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 400;
@@ -56,7 +56,7 @@
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
   font-display: swap;
-}
+} */
 
 .fa,
 .far,
@@ -69,48 +69,40 @@
 }
 
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #5b5c5c;
   line-height: 2rem;
 }
 
 .font-family-alt {
-  font-family: 'Raleway', sans-serif;
-}
-
-a {
-  color: rgba(var(--brand-secondary-light), 1);
-}
-
-a:hover {
-  color: rgba(var(--brand-secondary-dark), 1);
-  text-decoration: none;
-}
-
-.btn {
-  background-color: rgba(var(--brand-secondary-light), 1);
-  color: #ffffff;
-}
-
-.btn:hover {
-  background-color: rgba(var(--brand-secondary-dark), 1);
-  color: #ffffff;
+  font-family: 'Source Code Pro', monospace;
 }
 
 input, textarea, select, a {
   outline: none;
 }
 
+a {
+  color: rgba(var(--brand-primary-light), 1);
+}
+
+a:hover {
+  color: rgba(var(--brand-primary-dark), 1);
+  text-decoration: none;
+}
+
+.btn {
+  font-weight: bold;
+}
+
 @each $color in brand-primary-light, brand-primary-dark, brand-secondary-light,
   brand-secondary-dark
 {
-  .bg-$(color) {
+  .bg-$(color), .btn-$(color) {
     background-color: rgba(var(--$(color)), 1);
     color: #ffffff;
   }
-  .bg-$(color) a {
-    color: #ffffff;
-  }
+
   .bg-$(color) a:hover {
     opacity: 0.7;
   }
@@ -122,37 +114,82 @@ input, textarea, select, a {
       background-color: rgba(var(--$(color)), $(i / 100));
     }
   }
+  .btn-$(color):hover, .btn-$(color):active, .btn-$(color):focus {
+    filter: brightness(50%)
+  }
+
+  .text-$(color) {
+    color: rgba(var(--$(color)), 1);
+  }
+}
+
+.bg-img-1 {
+  background-image: url(/assets/uploads/hero1.jpg);
+  background-size: cover;
+}
+
+.bg-gradient-brand-primary-light-primary-dark {
+  background: rgba(var(--brand-primary-light), 1);
+  background: linear-gradient(135deg, rgba(var(--brand-primary-light), 1) 0%, rgba(var(--brand-primary-dark), 1) 100%);
+}
+
+.bg-gradient-brand-secondary-light-primary-dark {
+  background: rgba(var(--brand-secondary-light), 1);
+  background: linear-gradient(135deg, rgba(var(--brand-secondary-light), 1) 0%, rgba(var(--brand-secondary-dark), 1) 100%);
+}
+
+.bg-gradient-brand-primary-dark-secondary-dark {
+  background: rgba(var(--brand-primary-light), 1);
+  background: linear-gradient(135deg, rgba(var(--brand-primary-light), 1) 0%, rgba(var(--brand-secondary-dark), 1) 100%);
+}
+
+.bg-gradient-brand-secondary-light-primary-light {
+  background: rgba(var(--brand-secondary-light), 1);
+  background: linear-gradient(135deg, rgba(var(--brand-secondary-light), 1) 0%, rgba(var(--brand-primary-dark), 1) 100%);
+}
+
+.bg-gradient-dark-gray {
+  background: var(--gray);
+  background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.z-10 {
+  z-index: 10;;
 }
 
 @media (max-width: 1200px) {
-    legend {
-        font-size: calc(1.275rem + 0.3vw);
-    }
-    h1, .h1 {
-        font-size: calc(1.375rem + 1.5vw);
-    }
-    h2, .h2 {
-        font-size: calc(1.325rem + 0.9vw);
-    }
-    h3, .h3 {
-        font-size: calc(1.3rem + 0.6vw);
-    }
-    h4, .h4 {
-        font-size: calc(1.275rem + 0.3vw);
-    }
-    .display-1 {
-        font-size: calc(1.725rem + 5.7vw);
-    }
-    .display-2 {
-        font-size: calc(1.675rem + 5.1vw);
-    }
-    .display-3 {
-        font-size: calc(1.575rem + 3.9vw);
-    }
-    .display-4 {
-        font-size: calc(1.475rem + 2.7vw);
-    }
-    .close {
-        font-size: calc(1.275rem + 0.3vw);
-    }
+  legend {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  h2, .h2 {
+    font-size: calc(1.325rem + 0.9vw);
+  }
+  h3, .h3 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+  h4, .h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  .display-1 {
+    font-size: calc(1.725rem + 5.7vw);
+  }
+  .display-2 {
+    font-size: calc(1.675rem + 5.1vw);
+  }
+  .display-3 {
+    font-size: calc(1.575rem + 3.9vw);
+  }
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+  .close {
+    font-size: calc(1.275rem + 0.3vw);
+  }
 }
