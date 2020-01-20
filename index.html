@@ -141,7 +141,9 @@ learn_items:
       <div class="col-md-6 text-dark">
         <div class="shadow-lg p-4 bg-white rounded-lg">
           <h4 class="text-center">Contact Us</h4>
-          <form method="POST" action="https://forms.hubspot.com/uploads/form/v2/4009818/7f6ef458-c5b5-4653-b57b-40843d64178c">
+          <form method="POST" target="_top" action-xhr="{{ settings.form_url }}/{{ settings.hubspot_portal_id }}/7f6ef458-c5b5-4653-b57b-40843d64178c">
+            <input name="page_name" type="hidden" value="{{ page.head_title | liquify }}">
+            <input name="redirect_url" type="hidden" value="{{ settings.site_url }}/thank-you/">
             <div class="form-group">
               <label for="firstname">First Name</label>
               <input type="text" class="form-control" id="firstname" name="firstname" required>

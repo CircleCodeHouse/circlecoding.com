@@ -58,9 +58,6 @@
   font-display: swap;
 } */
 
-html {
-  scroll-behavior: smooth;
-}
 .fa,
 .far,
 .fas {
