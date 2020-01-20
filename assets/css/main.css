@@ -58,6 +58,9 @@
   font-display: swap;
 } */
 
+html {
+  scroll-behavior: smooth;
+}
 .fa,
 .far,
 .fas {
@@ -111,7 +114,7 @@ a:hover {
   }
   @for $i from 10 to 90 by 10 {
     .bg-$(color)-$(i) {
-      background-color: rgba(var(--$(color)), $(i / 100));
+      background-color: rgba(var(--$(color)), 0.$(i));
     }
   }
   .btn-$(color):hover, .btn-$(color):active, .btn-$(color):focus {
