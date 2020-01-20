@@ -95,6 +95,10 @@ a:hover {
   font-weight: bold;
 }
 
+.line-height-1 {
+  line-height: 1rem;
+}
+
 @each $color in brand-primary-light, brand-primary-dark, brand-secondary-light,
   brand-secondary-dark
 {

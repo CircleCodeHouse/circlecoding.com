@@ -1,0 +1,21 @@
+{% for _page in site.pages %}
+  {% if _page.settings %}
+    {% assign settings = _page %}
+  {% endif %}
+{% endfor %}
+<!-- htmllint preset="none" -->
+<p class="text-muted small text-center line-height-1">
+  By submitting your information, you agree to our <a href="https://discourse.austincodingacademy.com/tos">Terms of Service</a> and <a href="https://discourse.austincodingacademy.com/privacy">Privacy Policy</a>, and to receive marketing communications from {{ settings.site_name }}.
+</p>
+<amp-recaptcha-input
+  layout="nodisplay"
+  name="recaptcha_response"
+  data-sitekey="6LfApY8UAAAAADYQCJkSM5EQUdx57tzrMp1XFUm6"
+  data-action="homepage">
+</amp-recaptcha-input>
+<!-- htmllint preset="$previous" -->
+<p class="small text-muted text-center line-height-1">
+  This site is protected by reCAPTCHA and the Google
+  <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+  <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+</p>
