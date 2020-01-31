@@ -11,7 +11,7 @@
         "precomposedIcons": false,
         "declareOnlyDefaultIcon": true
       },
-      "appName": "settings.html"
+      "appName": "Arch Dental Assistant Academy"
     },
     "desktopBrowser": {},
     "windows": {
@@ -27,13 +27,13 @@
           "rectangle": false
         }
       },
-      "appName": "settings.html"
+      "appName": "Arch Dental Assistant Academy"
     },
     "androidChrome": {
       "pictureAspect": "noChange",
       "themeColor": "#ffffff",
       "manifest": {
-        "name": "settings.html",
+        "name": "Arch Dental Assistant Academy",
         "display": "standalone",
         "orientation": "notSet",
         "onConflict": "override",
