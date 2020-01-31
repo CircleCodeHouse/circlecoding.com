@@ -1,0 +1,24 @@
+
+{% for _page in site.pages %}
+{% if _page.settings %}
+  {% assign settings = _page %}
+  {% assign school = settings[site.key] %}
+{% endif %}
+{% endfor %}
+<!-- OPEN GRAPH TAGS -->
+<meta property="og:title" content="{{ page[site.key].title | liquify }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ school.url }}{{ page.url }}">
+{% assign default_image = '/assets/uploads/logo-' | append: site.key | append: '.png' %}
+{% assign image = page.img | default: default_image %}
+<meta property="og:image" content="{{ school.url | append: image }}">
+<meta property="og:description" content="{{ page[site.key].description | liquify }}">
+<meta property="og:site_name" content="{{ school.name }}" />
+<meta property="og:locale" content="en_US" />
+<!-- TWITTER TAGS -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ school.twitter }}">
+<meta name="twitter:creator" content="{{ school.twitter }}">
+<meta name="twitter:title" content="{{ page[site.key].title | liquify }}">
+<meta name="twitter:description" content="{{ page[site.key].description | liquify }}">
+<meta name="twitter:image" content="{{ school.url | append: image }}">

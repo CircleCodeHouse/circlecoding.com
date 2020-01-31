@@ -1,0 +1,15 @@
+---
+layout: default
+permalink: "/grievance-policy/"
+title: Grievance Policy
+---
+
+{% for _page in site.pages %}
+  {% if _page.settings %}
+    {% assign settings = _page %}
+  {% endif %}
+{% endfor %}
+
+<div class="container">
+  {{ settings.grievance_policy }}
+</div>

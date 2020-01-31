@@ -1,0 +1,93 @@
+---
+layout: default
+permalink: "/contact/"
+title: Contact
+head_title: Contact Admissions | {{ settings.site_name }}
+description: Ready to get started with your new career? Our friendly team is here
+  to help! Call or message us today to learn more and enroll!
+referrals:
+- Google
+- Facebook
+- Instagram
+- Snapchat
+- Radio
+- News (TV, article)
+- Friend / Family
+- Event
+- Faculty / Staff
+- Student / Alumni
+- Other
+
+---
+{% for _page in site.pages %}
+  {% if _page.settings %}
+    {% assign settings = _page %}
+  {% endif %}
+{% endfor %}
+
+<div class="container-fluid bg-img bg-img-3 d-flex justify-content-center align-items-center mb-5 pt-5">
+  <h1 class="display-4 text-white">Contact our team</h1>
+</div>
+{% include contact-form.html referrals=page.referrals %}
+<div class="container-fluid py-5" style="background-color:#f3e6e4;">
+  <div class="row justify-content-center">
+    <div class="col-md-3 col-sm-10 text-center">
+      <amp-img src="/assets/uploads/text.png" width="97" height="97"></amp-img>
+      <h4 class="my-4 font-weight-bold">Text Us</h4>
+      <p class="text-center"><a href="tel:{{ settings.phone }}">Text us your questions </a> and we will get back to you with the
+        answers you are looking for.</p>
+    </div>
+    <div class="col-md-3 col-sm-10 text-center">
+      <amp-img src="/assets/uploads/follow.png" width="96" height="96"></amp-img>
+      <h4 class="my-4 font-weight-bold">Follow Us</h4>
+      <p class="text-center ">Stay connected and get updates by following us on<a href="{{ settings.facebook }}"> Facebook</a> and
+        <a href="{{ settings.instagram }}">Instagram.</a></p>
+    </div>
+    <div class="col-md-3 col-sm-10 text-center">
+      <amp-img src="/assets/uploads/ebooks.png" width="97" height="97"></amp-img>
+      <h4 class="my-4 font-weight-bold">E-Book Download</h4>
+      <p>
+        Fill out the <a href="/contact/">contact form</a> to download our e-book
+        and learn more about what's included in our program.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container contact-brand-primary-light my-5">
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="justify-content-start con-brand-primary-light">Contact Information</h3>
+      <ul class="list-unstyled">
+        {% for location in settings.locations %}
+          <li>
+            <ul class="list-unstyled">
+              <li>
+                <strong>
+                  {% if location.url.size > 0 %}<a href="{{ location.url }}" rel="noopener" target="_blank">{% endif %}
+                    {{ location.campus }}
+                  {% if location.url %}</a>{% endif %}
+                </strong></li>
+              <li>{{ location.street }}</li>
+              <li>{{ location.city }}, {{ location.state }} {{ location.postal }}</li>
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <h3 class="justify-content-start">Admission Hours</h3>
+      {{ settings.admission_hours }}
+    </div>
+    <div class="col-md-4">
+      <h3 class="justify-content-start">School Tours</h3>
+      <p>We love providing tours for prospective students – contact us today to schedule an appointment.</p>
+      <p><strong>Walk-In Policy:</strong> We do not accept walk-in visits. Please be aware that this is a functioning
+        {{ settings.type | downcase }} practice during the week, and all visits will need to be scheduled with our team in advance.</p>
+    </div>
+  </div>
+  <p>
+    Phone: {% include phone.html %}</br>
+    <a href="mailto:{{ settings.email }}">{{ settings.email }}</a>
+  </p>
+</div>

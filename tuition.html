@@ -1,0 +1,87 @@
+---
+layout: default
+permalink: '/tuition/'
+title: Tuition
+head_title: Tuition Costs | View Our Affordable Plans | {{ settings.site_name }}
+description: Why pay more? {{ settings.site_name }} offers low cost tuition and affordable payment plans. Check out school tuition and see how we stack up.
+payment_options:
+- amount: '{{ settings.tuition | money_without_trailing_zeros }}'
+  item: TOTAL COST
+  label: Option 1
+  description: Full Payment
+  notes:
+    - Pay the full cost of {{ settings.tuition | money_without_trailing_zeros }} prior to the beginning of the first class.
+- amount: "{{ settings.payment_plans[payment_plan_index].down_payment | money_without_trailing_zeros}}"
+  item: DEPOSIT
+  label: "{{ settings.payment_plans[payment_plan_index].label }}"
+  description: Weekly Payment Plan
+  notes:
+    - "{{ settings.payment_plans[payment_plan_index].down_payment | money_without_trailing_zeros }} deposit prior to the first day of class."
+    - "{{ settings.payment_plans[payment_plan_index].number_of_weeks }} consecutive weekly payments of {{ settings.payment_plans[payment_plan_index].weekly_payment | money }} (auto-drafted) beginning the Monday after the first class."
+    - "Includes a {{ settings.payment_plans[payment_plan_index].weekly_payment | times: settings.payment_plans[payment_plan_index].number_of_weeks | plus: settings.payment_plans[payment_plan_index].down_payment | minus: settings.tuition | money }} payment plan fee."
+---
+
+{% for _page in site.pages %}
+  {% if _page.settings %}
+    {% assign settings = _page %}
+  {% endif %}
+{% endfor %}
+
+<div class="container-fluid bg-img bg-img-4 d-flex flex-column justify-content-center align-items-center mb-5 pt-5 w-100 text-center">
+  <h1 class="display-4 text-white">School Tuition</h1>
+  <h2 class="text-white">Affordable Tuition With Flexible Payment Plans</h2>
+</div>
+
+<div class="container my-5">
+  <div class="row text-center d-flex justify-content-center">
+    <div class="col-12">
+      <h3 class="display-5 mb-4">Select the payment plan that is best for you.</h3>
+      <p class="text-center">
+        Before paying, please call to make an appointment with an Admissions Representative to fill out the
+        registration paperwork.
+      </p>
+      <p>
+        At your appointment, you can choose which upcoming class you plan to attend.
+      </p>
+    </div>
+  </div>
+  <h3 class="text-center display-5 mt-4 mb-5">{{ settings.site_name }}</h3>
+
+  <div class="row flex-wrap justify-content-center">
+    {% assign plan_count = settings.payment_plans | size | plus: 1 %}
+    {% for index in (1..plan_count) %}
+      {% assign payment_plan_index = forloop.index0 | minus: 1 %}
+      {% if forloop.index == 1 or settings.payment_plans[payment_plan_index] != nil %}
+        {% if forloop.index != 1 %}
+          {% assign option = page.payment_options[1] %}
+        {% else %}
+          {% assign option = page.payment_options[0] %}
+        {% endif %}
+        <div class="col-lg-3 mb-4 col-md-6">
+          <div class="card h-100">
+            <div class="card-body text-center py-5">
+              <h5 class="card-title text-brand-secondary-light">{{ option.label | liquify }}</h5>
+              <h3 class="font-weight-bold">{{ option.amount | liquify }}</h3>
+              <p class="text-muted">{{ option.item | liquify }}</p>
+              <p>{{ option.description | liquify }}</p>
+              <a href="https://bubblesheet.secure.force.com/payments/" class="btn btn-lg btn-brand-secondary-light shadow">REGISTER</a>
+              <hr>
+              <ul class="card-text text-left">
+                {% for note in option.notes %}
+                  <li>{{ note | liquify }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <h5 class="text-center my-3">
+    None of those options work for you? That’s okay. Contact us to inquire about
+    a customized payment plan.
+  </h5>
+  <div class="text-center">
+    <a href="/contact/" role="button" class="btn btn-lg btn-brand-secondary-light center shadow mb-5">CONTACT ADMISSIONS</a>
+  </div>
+</div>
