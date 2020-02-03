@@ -158,3 +158,5 @@ fields:
   config:
     required: false
     color_format: RGB
+pages:
+- settings.html
