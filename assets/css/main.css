@@ -69,13 +69,13 @@
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
   color: #5b5c5c;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 .font-family-alt {
-  font-family: 'Source Code Pro', monospace;
+  /* font-family: 'Source Code Pro', monospace; */
 }
 
 input, textarea, select, a {
@@ -99,8 +99,16 @@ a:hover {
   line-height: 1rem;
 }
 
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
 @each $color in brand-primary-light, brand-primary-dark, brand-secondary-light,
-  brand-secondary-dark
+  brand-secondary-dark, brand-tertiary-light, brand-tertiary-dark
 {
   .bg-$(color), .btn-$(color) {
     background-color: rgba(var(--$(color)), 1);
@@ -118,6 +126,7 @@ a:hover {
       background-color: rgba(var(--$(color)), 0.$(i));
     }
   }
+
   .btn-$(color):hover, .btn-$(color):active, .btn-$(color):focus {
     filter: brightness(50%)
   }
@@ -127,34 +136,106 @@ a:hover {
   }
 }
 
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.bg-img-1 {
+  background-image: linear-gradient(
+    rgba(75, 75, 75, 0.2),
+    rgba(45, 45, 45, 0.5)
+  ),
+    url('/assets/uploads/Medical-Assistant-School-Cohort.webp');
+  background-position: top;
+}
+
+.webp-test.amp-notsupported + .bg-img-1 {
+  background-image: linear-gradient(
+    rgba(75, 75, 75, 0.2),
+    rgba(45, 45, 45, 0.5)
+  ),
+    url('/assets/uploads/Medical-Assistant-School-Cohort.jpg');
+  background-position: top;
+}
+
+.bg-img-2 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/Medical-Assistant-Training-School-Graduates.webp');
+}
+
+.webp-test.amp-notsupported + .bg-img-2 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/Medical-Assistant-Training-School-Graduates.jpg');
+}
+
+.bg-img-3 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/local-dental-assistant-program.jpg');
+}
+
+.bg-img-4 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/Medical-Assisrtant-Program-Graduation-80.jpg');
+  background-position: center;
+}
+
+.bg-img-5 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/home-top.jpg');
+  background-position: center;
+}
+
+.bg-img-6 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/student-resources-banner.jpg');
+  background-position: center;
+}
+
+.bg-img-7 {
+  background-image: url('/assets/uploads/breaker.jpg');
+  background-position: center;
+}
+
+.bg-img-8 {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/assets/uploads/header.jpg');
+  background-position: center;
+  height: 550px;
+}
+
+@each $light, $dark in
+  (brand-primary-light, brand-secondary-light, brand-tertiary-light),
+  (brand-primary-dark, brand-secondary-dark, brand-tertiary-dark) {
+  .bg-gradient-$(light) {
+    background: rgba(var(--$(light)), 1);
+    background: linear-gradient(135deg, rgba(var(--$(light)), 1) 0%, rgba(var(--$(dark)), 1) 100%);
+  }
+  .bg-gradient-$(dark) {
+    background: rgba(var(--$(dark)), 1);
+    background: linear-gradient(135deg, rgba(var(--$(dark)), 1) 0%, rgba(var(--$(light)), 1) 100%);
+  }
+  @for $i from 10 to 90 by 10 {
+    .bg-gradient-$(light)-$(i) {
+      background: rgba(var(--$(light)), 1);
+      background: linear-gradient(135deg, rgba(var(--$(light)), 0.$(i)) 0%, rgba(var(--$(dark)), 0.$(i)) 100%);
+    }
+    .bg-gradient-$(dark)-$(i) {
+      background: rgba(var(--$(dark)), 1);
+      background: linear-gradient(135deg, rgba(var(--$(dark)), 0.$(i)) 0%, rgba(var(--$(light)), 0.$(i)) 100%);
+    }
+  }
+}
+
+.btn {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .bg-img-1 {
   background-image: url(/assets/uploads/hero1.jpg);
   background-size: cover;
-}
-
-.bg-gradient-brand-primary-light-primary-dark {
-  background: rgba(var(--brand-primary-light), 1);
-  background: linear-gradient(135deg, rgba(var(--brand-primary-light), 1) 0%, rgba(var(--brand-primary-dark), 1) 100%);
-}
-
-.bg-gradient-brand-secondary-light-primary-dark {
-  background: rgba(var(--brand-secondary-light), 1);
-  background: linear-gradient(135deg, rgba(var(--brand-secondary-light), 1) 0%, rgba(var(--brand-secondary-dark), 1) 100%);
-}
-
-.bg-gradient-brand-primary-dark-secondary-dark {
-  background: rgba(var(--brand-primary-light), 1);
-  background: linear-gradient(135deg, rgba(var(--brand-primary-light), 1) 0%, rgba(var(--brand-secondary-dark), 1) 100%);
-}
-
-.bg-gradient-brand-secondary-light-primary-light {
-  background: rgba(var(--brand-secondary-light), 1);
-  background: linear-gradient(135deg, rgba(var(--brand-secondary-light), 1) 0%, rgba(var(--brand-primary-dark), 1) 100%);
-}
-
-.bg-gradient-dark-gray {
-  background: var(--gray);
-  background: linear-gradient(135deg, var(--dark) 0%, var(--gray) 100%);
 }
 
 .bg-black {
