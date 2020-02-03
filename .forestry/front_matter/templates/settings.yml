@@ -1,0 +1,142 @@
+---
+label: Settings
+hide_body: true
+fields:
+- type: boolean
+  name: settings
+  label: settings
+- type: text
+  name: head_title
+  label: head_title
+- type: text
+  name: site_name
+  label: site_name
+- type: file
+  name: logo
+  label: logo
+- type: file
+  name: seal
+  label: seal
+- type: text
+  name: primary_light_color
+  label: primary_light_color
+- type: text
+  name: primary_dark_color
+  label: primary_dark_color
+- type: text
+  name: secondary_light_color
+  label: secondary_light_color
+- type: text
+  name: secondary_dark_color
+  label: secondary_dark_color
+- type: text
+  name: tertiary_light_color
+  label: tertiary_light_color
+- type: text
+  name: tertiary_dark_color
+  label: tertiary_dark_color
+- type: number
+  name: phone
+  label: phone
+- type: text
+  name: email
+  label: email
+- type: text
+  name: google_tag_manager
+  label: google_tag_manager
+- type: text
+  name: google_tag_manager_amp
+  label: google_tag_manager_amp
+- type: text
+  name: google_analytics
+  label: google_analytics
+- type: text
+  name: callrail_company_id
+  label: callrail_company_id
+- type: text
+  name: facebook_pixel
+  label: facebook_pixel
+- type: text
+  name: reddit_pixel
+  label: reddit_pixel
+- type: text
+  name: linkedin_pixel
+  label: linkedin_pixel
+- type: text
+  name: facebook
+  label: facebook
+- type: text
+  name: instagram
+  label: instagram
+- type: text
+  name: site_url
+  label: site_url
+- type: text
+  name: form_url
+  label: form_url
+- type: number
+  name: hubspot_portal_id
+  label: hubspot_portal_id
+- type: text
+  name: footer_text
+  label: footer_text
+- type: text
+  name: announcement
+  label: announcement
+- type: field_group_list
+  name: team
+  label: team
+  fields:
+  - type: file
+    name: photo
+    label: photo
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: role
+    label: role
+- type: number
+  name: course_length_weeks
+  label: course_length_weeks
+- type: number
+  name: tuition
+  label: tuition
+- type: field_group_list
+  name: locations
+  label: locations
+  fields:
+  - type: text
+    name: campus
+    label: campus
+  - type: text
+    name: street
+    label: street
+  - type: text
+    name: city
+    label: city
+  - type: text
+    name: state
+    label: state
+  - type: text
+    name: postal
+    label: postal
+  - type: text
+    name: url
+    label: url
+- type: field_group_list
+  name: payment_plans
+  label: payment_plans
+  fields:
+  - type: number
+    name: down_payment
+    label: down_payment
+  - type: number
+    name: weekly_payment
+    label: weekly_payment
+  - type: text
+    name: label
+    label: label
+  - type: number
+    name: number_of_weeks
+    label: number_of_weeks
