@@ -145,7 +145,7 @@ fields:
   label: secondary_dark_color
   config:
     required: false
-    color_format: Hex
+    color_format: RGB
 - name: tertiary_light_color
   type: color
   label: tertiary_light_color
@@ -158,5 +158,12 @@ fields:
   config:
     required: false
     color_format: RGB
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+  default: Settings
+  hidden: true
 pages:
 - settings.html
