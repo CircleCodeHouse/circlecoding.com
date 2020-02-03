@@ -1,6 +1,6 @@
 
 {
-  "masterPicture": "./assets/uploads/seal.png",
+  "masterPicture": ".",
   "iconsPath": "/assets/favicons/",
   "design": {
     "ios": {
