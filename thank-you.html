@@ -1,17 +1,56 @@
 ---
 layout: default
+permalink: "/thank-you/"
 title: Thank You
-permalink: '/thank-you/'
-head_title: ''
-description: ''
----
 
-<section class="bg-light">
-  <div class="container d-flex justify-content-center pt-5 text-center">
-    <div class="shadow-lg p-5 rounded-lg">
-      <h3 class="font-weight-bold font-family-alt">Thank you for your submission.</h3>
-      <p>A member from our team will be in touch shortly!</p>
-      <p><a href="/">Return to Home</a></p>
+---
+{% for _page in site.pages %}
+  {% if _page.settings %}
+    {% assign settings = _page %}
+  {% endif %}
+{% endfor %}
+
+<div class="container">
+  <div class="row p-5">
+    <div class="col-md-12 col-lg-6 my-auto px-5">
+      <h2 class="display-5">
+        Thank You For Contacting Us!
+      </h2>
+      <p>
+        Your form has been submitted successfully.
+      </p>
+      <p>
+        Our team will get back to you soon. If you haven't already, we invite you to check out these helpful
+        resources to learn more about our program:
+      </p>
+      <ul>
+        <li>
+          <a href="/how-to-apply/">
+            Frequently asked questions
+          </a>
+        </li>
+        <li>
+          <a href="/tuition/">
+            Cost of school tuition
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-12 col-lg-6 m-auto py-3">
+      <div class="video-player rounded">
+
+        <amp-video id="my-video" controls width="1280" height="720" layout="responsive"
+          src="/assets/uploads/MAS-Websites_1118.webm" class="rounded">
+        </amp-video>
+
+        <div id="my-overlay" class="click-to-play-overlay">
+
+          <div class="play-icon" role="button" tabindex="0" on="tap:my-overlay.hide, my-video.play"></div>
+
+          <amp-img class="poster-image img-fluid rounded shadow" layout="fill" src="/assets/uploads/Koralyn-Sereyko-Medical-Asst-Training-Lab-80.jpg"></amp-img>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>

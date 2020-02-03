@@ -25,6 +25,8 @@
       --brand-primary-dark: {{ settings.primary_dark_color | replace: 'rgb(', '' | replace: ')', '' }};
       --brand-secondary-light: {{ settings.secondary_light_color | replace: 'rgb(', '' | replace: ')', '' }};
       --brand-secondary-dark: {{ settings.secondary_dark_color | replace: 'rgb(', '' | replace: ')', '' }};
+      --brand-tertiary-light: {{ settings.tertiary_light_color | replace: 'rgb(', '' | replace: ')', '' }};
+      --brand-tertiary-dark: {{ settings.tertiary_dark_color | replace: 'rgb(', '' | replace: ')', '' }};
     }
     {% capture css %}{% file_exists _includes/css.html %}{% endcapture %}
     {% if css == "true" %}{% include css.html %}{% endif %}

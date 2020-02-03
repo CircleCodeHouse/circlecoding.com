@@ -12,15 +12,23 @@ learn_items:
   description: In-person, part-time classes meet twice a week in the evenings,
     so learning to code fits your schedule. Benefit from a “flipped classroom” approach,
     with hands-on classes led by instructors who work as professional developers during the day.
-- icon: far fa-lightbulb fa-2x
+- icon: far fa-paper-plane fa-2x
   title: Affordable Tuition
   description: Cover your tuition by paying course-by-course or for the entire program up front,
     (and saving). Contact our admissions team to discuss how Austin Coding Academy can work for you.
-- icon: far fa-lightbulb fa-2x
+- icon: far fa-envelope-open fa-2x
   title: Unlimited Tutoring
   description: Stay on track with your coursework by taking advantage of free unlimited tutoring.
     You can book 1-on-1 help on your schedule or take advantage of weekend group tutoring at both of our campuses.
-- icon: far fa-lightbulb fa-2x
+- icon: far fa-gem fa-2x
+  title: Job Placement
+  description: Develop skills that employers are looking for with our practical curriculum, taught by professional developers.
+    Receive 1-on-1 attention from our Director of Job Placement. Build your resume, practice interviews, and more in our Job Placement Course.
+- icon: far fa-comments fa-2x
+  title: Job Placement
+  description: Develop skills that employers are looking for with our practical curriculum, taught by professional developers.
+    Receive 1-on-1 attention from our Director of Job Placement. Build your resume, practice interviews, and more in our Job Placement Course.
+- icon: far fa-gem fa-2x
   title: Job Placement
   description: Develop skills that employers are looking for with our practical curriculum, taught by professional developers.
     Receive 1-on-1 attention from our Director of Job Placement. Build your resume, practice interviews, and more in our Job Placement Course.
@@ -33,13 +41,19 @@ learn_items:
   {% endif %}
 {% endfor %}
 
-<section class="py-5 bg-img-1">
-  <div class="container text-center text-white my-5 py-5">
-    <div class="my-5 py-5">
-      <h1 class="font-family-alt font-weight-bold">Change Your Life With a New Career</h1>
+<section class="bg-img bg-img-1">
+  <div class="bg-gradient-brand-primary-light-50 py-5">
+    <div class="container text-center text-white py-5">
+      <h1 class="font-family-alt font-weight-bold">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit
+      </h1>
       <h2 class="font-family-alt font-italic font-weight-light">
-        PART-TIME CODING CLASSES TAUGHT BY LOCAL FULL-TIME DEVELOPERS
+        Odit accusamus molestias obcaecati mollitia porro?
       </h2>
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <a class="btn btn-brand-secondary-dark mr-3" href="#">GET STARTED</a>
+        <a class="btn btn-light mr-3" href="#">MORE INFO</a>
+      </div>
     </div>
   </div>
 </section>
@@ -55,7 +69,7 @@ learn_items:
       {% for item in page.learn_items %}
         <div class="col-md-6">
           {% if forloop.last %}
-            <div class="card text-white bg-gradient-dark-gray mb-3 border-0 shadow-lg">
+            <div class="card text-white bg-gradient-brand-secondary-dark mb-3 border-0 shadow-lg">
               <div class="card-body">
                 <h5 class="card-title">{{ item.title }}</h5>
                 <h6 class="card-text">{{ item.description }}</h6>
@@ -64,7 +78,7 @@ learn_items:
           {% else %}
             <div class="media mb-3">
               {% if item.icon != nil %}
-                <i class="{{ item.icon }} mr-3 text-brand-primary-dark"></i>
+                <i class="{{ item.icon }} mr-3 text-brand-secondary-dark"></i>
               {% endif %}
               <div class="media-body">
                 <h5 class="mt-0">{{ item.title }}</h5>
@@ -78,24 +92,44 @@ learn_items:
   </div>
 </section>
 
-<!-- <section class="bg-light py-5">
+<section class="bg-gradient-brand-secondary-light py-5">
   <div class="container d-flex justify-content-center my-5">
-    <a href="#" class="btn btn-lg btn-brand-primary-dark">GET STARTED</a>
-    <a href="#" class="btn btn-lg btn-outline-dark mx-2">MORE INFO</a>
-    <a href="#" class="btn btn-lg btn-brand-secondary-dark">CONTACT US</a>
+    <a href="#" class="btn btn-brand-primary-light">GET STARTED</a>
+    <a href="#" class="btn btn-light mx-2">MORE INFO</a>
+    <a href="#" class="btn btn-dark">CONTACT US</a>
   </div>
-</section> -->
+</section>
 
-<!-- <section class="py-5 text-center">
+<section class="py-5">
   <div class="container">
-    <h3 class="font-family-alt"><strong>Events</strong></h3>
     <div class="row d-flex justify-content-center">
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 d-flex justify-content-end position-relative">
+        <img src="/assets/uploads/dental-assistant-course-and-externship.png" class="w-100 rounded-lg" layout="responsive"/>
+        <div class="position-absolute pt-4 px-4 pb-0 bg-gradient-brand-primary-dark text-white w-75 rounded-lg" style="right:30px; bottom: 15px; line-height: 1rem;">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non
+            magni itaque a quidem aut, natus temporibus
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3><strong>Launch</strong> A Unique Project</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non
+          magni itaque a quidem aut, natus temporibus. Facilis aliquam necessitatibus
+          velit et veritatis quo omnis similique corrupti mollitia! Quae, atque?
+        </p>
+        <ul>
+          <li>Lorem ipsum</li>
+          <li>Lorem ipsum</li>
+          <li>Lorem ipsum</li>
+        </ul>
+        <a href="#">Read More</a>
+      </div>
     </div>
-  </div> -->
+  </div>
+</section>
 
-
-<!-- </section>
 <section class="py-5 bg-light">
   <div class="container">
     <h3>Our Team</h3>
@@ -105,13 +139,20 @@ learn_items:
     </div>
     <div class="row d-flex justify-content-center">
       {% for mate in settings.team %}
+        {% assign two = forloop.index | modulo: 2 %}
+        {% assign three = forloop.index | modulo: 3 %}
         <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
           <div class="mb-3 position-relative">
-            <img src="{{ mate.photo }}" class="rounded-circle w-100 shadow-lg mb-3">
+            <div class="rounded-circle w-100 shadow-lg mb-3 bg-brand-{% if two == 0 %}secondary{% elsif three == 0 %}tertiary{% else %}primary{% endif %}-light p-3">
+              <div class="rounded-circle w-100 bg-brand-{% if two == 0 %}secondary{% elsif three == 0 %}tertiary{% else %}primary{% endif %}-dark p-3">
+                <img src="{{ mate.photo }}" class="rounded-circle w-100" layout="fixed" />
+              </div>
+            </div>
             <div class="d-flex justify-content-center position-absolute w-100 mb-3" style="bottom: -10px">
               <div class="rounded-lg p-1 bg-white text-center px-1 shadow-sm w-100">
                 <strong>{{ mate.name }}</strong>
-                <p class="mb-0 h6">{{ mate.role }}</p>
+                <br />
+                <small class="mb-0 h6 text-muted">{{ mate.role }}</small>
               </div>
             </div>
           </div>
@@ -119,48 +160,59 @@ learn_items:
       {% endfor %}
     </div>
   </div>
-</section> -->
+</section>
 
-<section class="bg-gradient-light-gray py-5" id="contact">
-  <div class="container">
+<section class="bg-gradient-brand-tertiary-dark py-5" id="contact">
+  <div class="container my-5">
     <div class="row">
-      <div class="col-md-6 text-center">
-        <div class="card shadow-lg mb-5">
-          <img src="/assets/uploads/eventpic.jpeg" class="card-img-top" alt="event-img">
-          <div class="card-body">
-            <h5 class="card-title">Learn to Code Workshop</h5>
-            <p class="card-text">Have an interest in learning to code, but don't know where to start? This workshop is crafted for total beginners looking for an entry to the wonderful world of coding!</p>
-            <dl>
-              <dt>Date and Time</dt>
-              <dd>Sat, February 8, 2020<br/>2:00 PM – 4:00 PM CST</dd>
-              <dt>Location</dt>
-              <dd>CENTRL Office Downtown Dallas<br/>Suite #200<br/>Dallas, TX 75201</dd>
-            </dl>
-            <a href="https://www.eventbrite.com/e/circle-coding-academy-learn-to-code-workshop-centrl-office-2820-tickets-90673895061" class="btn btn-brand-primary-dark px-5" target="_blank">More Info</a>
-          </div>
+      <div class="col-md-6 text-white pt-4">
+        <h3><strong>Sign up for training now!</strong></h3>
+        <p></p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et soluta,
+          accusamus expedita porro omnis repellendus voluptas assumenda officia
+          quisquam eos pariatur sit harum ipsa cum labore earum nulla. Culpa, ut!
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et soluta,
+          accusamus expedita porro omnis repellendus voluptas assumenda officia
+          quisquam eos pariatur sit harum ipsa cum labore earum nulla. Culpa, ut!
+        </p>
+        <div class="mt-5 d-flex">
+          <a href="#" class="btn btn-brand-primary-light">GET STARTED</a>
+          <a href="#" class="btn btn-light mx-2">MORE INFO</a>
         </div>
       </div>
       <div class="col-md-6 text-dark">
         <div class="shadow-lg p-4 bg-white rounded-lg">
-          <h4 class="text-center">Contact Us</h4>
+          <h4 class="text-center"><strong>Contact Us</strong></h4>
+          <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           <form method="POST" target="_top" action-xhr="{{ settings.form_url }}/{{ settings.hubspot_portal_id }}/aeb56290-0aaf-4010-a67b-08c29aa51e8f">
             <input name="page_name" type="hidden" value="{{ page.head_title | liquify }}">
             <input name="redirect_url" type="hidden" value="{{ settings.site_url }}/thank-you/">
-            <div class="form-group">
-              <label for="firstname">First Name</label>
-              <input type="text" class="form-control" id="firstname" name="firstname" required>
-            </div>
-            <div class="form-group">
-              <label for="lastname">Last Name</label>
-              <input type="text" class="form-control" id="lastname" name="lastname" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" class="form-control" id="phone" name="phone" required>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="firstname">First Name</label>
+                  <input type="text" class="form-control" id="firstname" name="firstname" required>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="lastname">Last Name</label>
+                  <input type="text" class="form-control" id="lastname" name="lastname" required>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Message</label>

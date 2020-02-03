@@ -78,5 +78,8 @@
         "_includes/css.html"
       ]
     }
+  },
+  "dependencies": {
+    "postcss-conditionals": "^2.1.0"
   }
 }

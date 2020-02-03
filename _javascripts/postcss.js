@@ -7,6 +7,7 @@ postcss([
   require('postcss-import'),
   require('postcss-each'),
   require('postcss-for'),
+  require('postcss-conditionals'),
   require('postcss-amp'),
   require('@fullhuman/postcss-purgecss')({ content: ['./_site/**/*.html'] }),
   require('cssnano')({ preset: ['advanced', { discardComments: { removeAll: true }}]}),

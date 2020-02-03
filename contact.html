@@ -25,11 +25,16 @@ referrals:
   {% endif %}
 {% endfor %}
 
-<div class="container-fluid bg-img bg-img-3 d-flex justify-content-center align-items-center mb-5 pt-5">
-  <h1 class="display-4 text-white">Contact our team</h1>
+<div class="bg-img bg-img-3 mb-5">
+  <div class="container-fluid bg-gradient-brand-primary-dark-50 d-flex justify-content-center align-items-center py-5">
+    <div class="py-5">
+      <h1 class="display-4 text-white">Contact our team</h1>
+    </div>
+  </div>
 </div>
+
 {% include contact-form.html referrals=page.referrals %}
-<div class="container-fluid py-5" style="background-color:#f3e6e4;">
+<div class="container-fluid py-5 bg-brand-tertiary-light-50">
   <div class="row justify-content-center">
     <div class="col-md-3 col-sm-10 text-center">
       <amp-img src="/assets/uploads/text.png" width="97" height="97"></amp-img>

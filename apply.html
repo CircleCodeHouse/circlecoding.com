@@ -1,0 +1,228 @@
+---
+layout: default
+permalink: '/apply/'
+form_guid:
+form_fields:
+- name: redirect_url
+  label:
+  description:
+  type: hidden
+  value: '{{ settings.url }}/thank-you/'
+  placeholder: 'First Name'
+  required: true
+  small_width: '12'
+  medium_width: '6'
+  options: []
+- name: firstname
+  label: 'First Name'
+  description: ''
+  type: text
+  value: ''
+  placeholder: 'First Name'
+  required: true
+  small_width: '12'
+  medium_width: '6'
+  options: []
+- name: lastname
+  label: 'Last Name'
+  description: ''
+  type: text
+  value: ''
+  placeholder: 'Last Name'
+  required: true
+  small_width: '12'
+  medium_width: '6'
+  options: []
+- name: phone
+  label: 'Phone Number'
+  description: ''
+  type: text
+  value: ''
+  placeholder: 'Phone Number'
+  required: true
+  small_width: '12'
+  medium_width: '6'
+  options: []
+- name: email
+  label: 'Email'
+  description: ''
+  type: email
+  value: ''
+  placeholder: 'Email'
+  required: true
+  small_width: 12
+  medium_width: 6
+  options: []
+- name: city
+  label:  Current City
+  description: ''
+  type: text
+  value: ''
+  placeholder: City
+  required: true
+  small_width: "12"
+  medium_width: "6"
+  options: []
+- name: state
+  label: Current State
+  description: ''
+  type: select
+  value: ''
+  placeholder: State
+  required: true
+  small_width: "12"
+  medium_width: "6"
+  options:
+  - value: 'Alabama'
+    label: 'Alabama'
+  - value: 'Alaska'
+    label: 'Alaska'
+  - value: 'Arizona'
+    label: 'Arizona'
+  - value: 'Arkansas'
+    label: 'Arkansas'
+  - value: 'California'
+    label: 'California'
+  - value: 'Colorado'
+    label: 'Colorado'
+  - value: 'Connecticut'
+    label: 'Connecticut'
+  - value: 'Delaware'
+    label: 'Delaware'
+  - value: 'District of Columbia'
+    label: 'District of Columbia'
+  - value: 'Florida'
+    label: 'Florida'
+  - value: 'Georgia'
+    label: 'Georgia'
+  - value: 'Hawaii'
+    label: 'Hawaii'
+  - value: 'Idaho'
+    label: 'Idaho'
+  - value: 'Illinois'
+    label: 'Illinois'
+  - value: 'Indiana'
+    label: 'Indiana'
+  - value: 'Iowa'
+    label: 'Iowa'
+  - value: 'Kansas'
+    label: 'Kansas'
+  - value: 'Kentucky'
+    label: 'Kentucky'
+  - value: 'Louisiana'
+    label: 'Louisiana'
+  - value: 'Maine'
+    label: 'Maine'
+  - value: 'Maryland'
+    label: 'Maryland'
+  - value: 'Massachusetts'
+    label: 'Massachusetts'
+  - value: 'Michigan'
+    label: 'Michigan'
+  - value: 'Minnesota'
+    label: 'Minnesota'
+  - value: 'Mississippi'
+    label: 'Mississippi'
+  - value: 'Missouri'
+    label: 'Missouri'
+  - value: 'Montana'
+    label: 'Montana'
+  - value: 'Nebraska'
+    label: 'Nebraska'
+  - value: 'Nevada'
+    label: 'Nevada'
+  - value: 'New Hampshire'
+    label: 'New Hampshire'
+  - value: 'New Jersey'
+    label: 'New Jersey'
+  - value: 'New Mexico'
+    label: 'New Mexico'
+  - value: 'New York'
+    label: 'New York'
+  - value: 'North Carolina'
+    label: 'North Carolina'
+  - value: 'North Dakota'
+    label: 'North Dakota'
+  - value: 'Ohio'
+    label: 'Ohio'
+  - value: 'Oklahoma'
+    label: 'Oklahoma'
+  - value: 'Oregon'
+    label: 'Oregon'
+  - value: 'Pennsylvania'
+    label: 'Pennsylvania'
+  - value: 'Rhode Island'
+    label: 'Rhode Island'
+  - value: 'South Carolina'
+    label: 'South Carolina'
+  - value: 'South Dakota'
+    label: 'South Dakota'
+  - value: 'Tennessee'
+    label: 'Tennessee'
+  - value: 'Texas'
+    label: 'Texas'
+  - value: 'Utah'
+    label: 'Utah'
+  - value: 'Vermont'
+    label: 'Vermont'
+  - value: 'Virginia'
+    label: 'Virginia'
+  - value: 'Washington'
+    label: 'Washington'
+  - value: 'West Virginia'
+    label: 'West Virginia'
+  - value: 'Wisconsin'
+    label: 'Wisconsin'
+  - value: 'Wyoming'
+    label: 'Wyoming'
+- name: zip
+  label: Current Zip
+  description: ''
+  type: text
+  value: ''
+  placeholder: Zip Code
+  required: true
+  small_width: "12"
+  medium_width: "6"
+  options: []
+- name: date_of_birth1
+  label: Date of Birth
+  description: ''
+  type: date
+  value: ''
+  placeholder:
+  required: true
+  small_width: "12"
+  medium_width: "6"
+  options: []
+  placeholder: Select your answer
+  required: true
+  small_width: "12"
+  medium_width: "6"
+---
+
+<div class="container mt-90 pt-1 pb-5">
+  <div class="my-5 my-sm-10 px-4 p-lg-0 border mx-auto">
+    <h2 class="font-family-alt my-5 my-sm-10 display-5 text-center">
+      Application
+    </h2>
+    <form
+      action-xhr="{{ settings.form_url }}/{{ settings.hubspot_portal_id }}/{{ page.form_guid }}"
+      method="POST"
+      target="_top"
+    >
+      <div class="row p-5">
+        {% include fields.html fields=page.form_fields %}
+
+        <div class="col-12 mb-4 d-flex justify-content-center">
+          <button class="btn btn-round text-white btn-brand-primary-dark" type="Submit">
+            Submit
+          </button>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center">
+          {% include data-agreement.html %}
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
