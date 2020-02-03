@@ -17,24 +17,6 @@ fields:
 - type: file
   name: seal
   label: seal
-- type: text
-  name: primary_light_color
-  label: primary_light_color
-- type: text
-  name: primary_dark_color
-  label: primary_dark_color
-- type: text
-  name: secondary_light_color
-  label: secondary_light_color
-- type: text
-  name: secondary_dark_color
-  label: secondary_dark_color
-- type: text
-  name: tertiary_light_color
-  label: tertiary_light_color
-- type: text
-  name: tertiary_dark_color
-  label: tertiary_dark_color
 - type: number
   name: phone
   label: phone
@@ -140,3 +122,39 @@ fields:
   - type: number
     name: number_of_weeks
     label: number_of_weeks
+- name: primary_light_color
+  type: color
+  label: primary_light_color
+  config:
+    required: false
+    color_format: RGB
+- name: primary_dark_color
+  type: color
+  label: primary_dark_color
+  config:
+    required: false
+    color_format: RGB
+- name: secondary_light_color
+  type: color
+  label: secondary_light_color
+  config:
+    required: false
+    color_format: RGB
+- name: secondary_dark_color
+  type: color
+  label: secondary_dark_color
+  config:
+    required: false
+    color_format: Hex
+- name: tertiary_light_color
+  type: color
+  label: tertiary_light_color
+  config:
+    required: false
+    color_format: RGB
+- name: tertiary_dark_color
+  type: color
+  label: tertiary_dark_color
+  config:
+    required: false
+    color_format: RGB
